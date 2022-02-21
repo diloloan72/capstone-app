@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <h1>Loan yeu Derrick</h1>
       <ImageUploader />
+      <button type="button">Detect logo</button>
     </div>
   );
 }
