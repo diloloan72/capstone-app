@@ -4,7 +4,7 @@ import ImageUploader from "./ImageUploader.js";
 
 function App() {
   const [logos, setLogos] = useState("Detecting");
-  const [image, setImage] = useState(null);
+  const [imageBase64, setImageBase64] = useState(null);
 
   const detectLogos = useCallback(async () => {
     console.log('makingrequesttoserver');
@@ -12,18 +12,17 @@ function App() {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        imageBase64: image
+        image_base_64: imageBase64
       })
     })
       .then((res) => res.json())
       .then((data) => {
         setLogos(data.logos);
       });
-  }, []);
+  }, [imageBase64]);
 
-  const onImageUploaded = (imgURL) => {
-    console.log(imgURL);
-    setImage(imgURL);
+  const onImageUploaded = (imgBase64) => {
+    setImageBase64(imgBase64);
   };
 
   return (
