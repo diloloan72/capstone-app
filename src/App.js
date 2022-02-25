@@ -17,7 +17,11 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('data', data);
         setLogos(data.logos);
+      })
+      .catch((error) => {
+        console.log('error', error);
       });
   }, [imageBase64]);
 
