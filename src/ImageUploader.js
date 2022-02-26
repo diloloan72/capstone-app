@@ -17,7 +17,7 @@ class ImageUploader extends Component {
       this.setState({
         image: URL.createObjectURL(img),
       });
-      // Convert image to base 64 
+      // Convert image to base 64
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.props.onImageUploaded(reader.result);
@@ -30,9 +30,9 @@ class ImageUploader extends Component {
     return (
       <div>
         <div>
-          <div>
-            <img src={this.state.image} />
-            <h1>Select Image</h1>
+          <img src={this.state.image} />
+          <div className="outerDiv">
+            <h2>Select Image</h2>
             <input type="file" name="myImage" onChange={this.onImageChange} />
           </div>
         </div>

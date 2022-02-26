@@ -1,4 +1,13 @@
-img{
-	max-height: 300px;
-	max-width: 700px;
+img {
+	max-height: 200px;
+	max-width: 500px;
+}
+
+.outerDiv {
+	border-style: dashed;
+	padding-bottom: 20px;
+	margin-right: 300px;
+	margin-left: 300px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
