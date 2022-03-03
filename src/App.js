@@ -3,7 +3,7 @@ import "./App.css";
 import ImageUploader from "./ImageUploader.js";
 
 function App() {
-  const [logos, setLogos] = useState("");
+  const [logosLabel, setLogosLabel] = useState("");
   const [imageBase64, setImageBase64] = useState(null);
 
   const detectLogos = useCallback(async () => {
@@ -19,9 +19,9 @@ function App() {
       .then((data) => {
         console.log("data", data);
         if (data.logos.length == 0) {
-          setLogos("Unable to detect logos");
+          setLogosLabel("Unable to detect logos");
         } else {
-          setLogos(data.logos);
+          setLogosLabel(data.logos.join(", "));
         }
       })
       .catch((error) => {
@@ -40,7 +40,7 @@ function App() {
       <button type="button" onClick={detectLogos}>
         Detect logo
       </button>
-      <h2>{logos}</h2>
+      <h2>{logosLabel}</h2>
     </div>
   );
 }
