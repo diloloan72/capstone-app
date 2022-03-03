@@ -5,9 +5,14 @@ img {
 
 .outerDiv {
 	border-style: dashed;
+	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-right: 300px;
 	margin-left: 300px;
 	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+h2 {
 	margin-bottom: 10px;
 }
