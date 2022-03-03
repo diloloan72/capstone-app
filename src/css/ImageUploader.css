@@ -7,8 +7,10 @@ img {
 	border-style: dashed;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	margin-right: 300px;
-	margin-left: 300px;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	width: 50%;
 	margin-top: 10px;
 	margin-bottom: 20px;
 }

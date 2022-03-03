@@ -1,7 +1,8 @@
 .About {
 	text-align: left;
 	line-height: 2;
-	margin-left: 300px;
-	margin-right: 200px;
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%);
 	margin-top: 50px;
 }
