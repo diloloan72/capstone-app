@@ -30,7 +30,7 @@ class ImageUploader extends Component {
     return (
       <div>
         <div>
-          <img src={this.state.image} />
+          <img src={this.state.image} alt=""/>
           <div className="outerDiv">
             <h2>Select Image</h2>
             <input type="file" name="myImage" onChange={this.onImageChange} />

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import "../css/LogoDetector.css";
 import ImageUploader from "./ImageUploader.js";
 
@@ -18,7 +18,7 @@ function LogoDetector() {
       .then((res) => res.json())
       .then((data) => {
         console.log("data", data);
-        if (data.logos.length == 0) {
+        if (data.logos.length === 0) {
           setLogosLabel("Unable to detect logos");
         } else {
           setLogosLabel(data.logos.join(", "));
