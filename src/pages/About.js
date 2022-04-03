@@ -1,6 +1,9 @@
 import React from "react";
 import "../css/About.css";
 
+/*
+ * The About page that introduces the project
+ */
 function About() {
   return (
     <div className="About">

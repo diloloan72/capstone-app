@@ -2,12 +2,15 @@ import React, { useState, useCallback } from "react";
 import "../css/LogoDetector.css";
 import ImageUploader from "./ImageUploader.js";
 
+/*
+ * Component that allows users to detect logos in an uploaded image 
+ */
 function LogoDetector() {
   const [logosLabel, setLogosLabel] = useState("");
   const [imageBase64, setImageBase64] = useState(null);
 
+  // Make a request to the backend to detect logos in the image 
   const detectLogos = useCallback(async () => {
-    console.log("makingrequesttoserver");
     await fetch("/detect_logos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -17,9 +20,10 @@ function LogoDetector() {
     })
       .then((res) => res.json())
       .then((data) => {
+        // Parse response from the server 
         console.log("data", data);
         if (data.logos.length === 0) {
-          setLogosLabel("Unable to detect logos");
+          setLogosLabel("Unable to detect logos"); 
         } else {
           setLogosLabel(data.logos.join(", "));
         }
@@ -29,6 +33,7 @@ function LogoDetector() {
       });
   }, [imageBase64]);
 
+  // Save the base64 image from the ImageUploader component 
   const onImageUploaded = (imgBase64) => {
     setImageBase64(imgBase64);
   };
